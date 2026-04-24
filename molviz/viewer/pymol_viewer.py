@@ -16,6 +16,10 @@ from PyQt6.QtWidgets import QWidget, QVBoxLayout
 from ..parsers.molecule import Molecule
 from ..annotations.annotation_manager import Annotation, AnnotationManager, AnnotationType
 
+# Maximum length of a PyMOL object name (PyMOL silently truncates at 255,
+# but short names are safer and easier to read in the PyMOL log).
+_MAX_PYMOL_NAME_LEN = 20
+
 
 class _PyMOLGLWidget(QOpenGLWidget):
     """QOpenGLWidget that drives a pymol2.PyMOL rendering context."""
@@ -199,7 +203,7 @@ class PyMOLViewer(QWidget):
         """Load a :class:`Molecule` into the viewer."""
         self._reset_scene()
         pdb_str = molecule.to_pdb_string()
-        name = (molecule.name or "molecule").replace(" ", "_")[:20]
+        name = (molecule.name or "molecule").replace(" ", "_")[:_MAX_PYMOL_NAME_LEN]
         self._cmd.read_pdbstr(pdb_str, name)
         self._cmd.orient()
         self._cmd.zoom("all", 5.0)
@@ -381,8 +385,6 @@ class PyMOLViewer(QWidget):
                 n1_v = _cross(b1, b2)
                 n2_v = _cross(b2, b3)
                 m = _cross(n1_v, b2)
-                nb2 = math.sqrt(_dot(b2, b2))
-                b2h = [b2[i] / nb2 for i in range(3)]
                 x_val = _dot(n1_v, n2_v)
                 y_val = _dot(m, n2_v)
                 di = math.degrees(math.atan2(y_val, x_val))
