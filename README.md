@@ -14,7 +14,7 @@ A PyQt6-based molecular visualization desktop application for opening **`.pdb`**
 | **Measurements** | Distance (2 atoms), angle (3 atoms), dihedral (4 atoms); results panel |
 | **Annotations** | Text labels, arrows/distance markers with custom colour & font size; serialised to JSON |
 | **Analysis** | Steric-clash detection, rough solvent-accessible surface area estimate |
-| **Image export** | PNG / JPEG / TIFF at configurable resolution (up to 8 192 × 8 192 px) and DPI (up to 1 200 DPI) |
+| **Image export** | PNG / JPEG / TIFF at configurable resolution (up to 8192 × 8192 px) and DPI (up to 1200 DPI) |
 | **Properties panel** | Per-structure summary, full atom table, chain/residue tree |
 
 ---

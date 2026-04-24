@@ -500,7 +500,7 @@ class MainWindow(QMainWindow):
             "<li>Colour schemes: chain, element, B-factor, residue</li>"
             "<li>Distance, angle, and dihedral measurements</li>"
             "<li>Text labels and arrow annotations</li>"
-            "<li>Publication-quality image export (PNG/JPEG/TIFF, up to 300 DPI)</li>"
+            "<li>Publication-quality image export (PNG/JPEG/TIFF, up to 1200 DPI)</li>"
             "</ul>"
             "<p>3D rendering powered by <a href='https://3dmol.csb.pitt.edu'>3Dmol.js</a>.</p>",
         )
