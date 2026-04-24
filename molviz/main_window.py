@@ -16,7 +16,7 @@ from PyQt6.QtGui import (
     QAction, QIcon, QKeySequence, QColor, QFont, QPalette,
 )
 
-from .viewer.mol_viewer import MolViewer
+from .viewer.pymol_viewer import PyMOLViewer as MolViewer
 from .parsers.pdb_parser import PDBParser
 from .parsers.mae_parser import MAEParser
 from .parsers.molecule import Molecule
@@ -502,5 +502,5 @@ class MainWindow(QMainWindow):
             "<li>Text labels and arrow annotations</li>"
             "<li>Publication-quality image export (PNG/JPEG/TIFF, up to 1200 DPI)</li>"
             "</ul>"
-            "<p>3D rendering powered by <a href='https://3dmol.csb.pitt.edu'>3Dmol.js</a>.</p>",
+            "<p>3D rendering powered by <a href='https://pymol.org'>PyMOL</a>.</p>",
         )

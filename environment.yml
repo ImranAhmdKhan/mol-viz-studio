@@ -1,0 +1,14 @@
+name: molviz-studio
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python>=3.10
+  - pymol-open-source>=3.0
+  - numpy>=1.24
+  - pillow>=10.0
+  - pip
+  - pip:
+      - PyQt6>=6.5.0
+      - pytest>=7.4
+      - pytest-qt>=4.2
