@@ -11,9 +11,10 @@ license = { text = "MIT" }
 requires-python = ">=3.10"
 dependencies = [
     "PyQt6>=6.5.0",
-    "PyQt6-WebEngine>=6.5.0",
     "numpy>=1.24",
     "Pillow>=10.0",
+    # pymol-open-source must be installed via conda:
+    #   conda install -c conda-forge pymol-open-source
 ]
 
 [project.optional-dependencies]
